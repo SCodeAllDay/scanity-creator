@@ -1,9 +1,7 @@
-#include "../dep/essentials/mod.hpp"
+#include "mod.hpp"
 #include <iostream>
 
 class Mod1 : public Mod {
-    private:
-
     public:
     bool init() override{
         std::cout<<"Init"<<std::endl;
@@ -19,6 +17,6 @@ class Mod1 : public Mod {
     }
 };
 
-extern "C" __declspec(dllexport) Mod* __cdecl create() {
+extern "C" Mod* createMod() {
     return new Mod1();
 }
